@@ -24,17 +24,17 @@
       <div class="row row-cols-3 mt-5">
         
         <div v-for="(dischi, index) in dischiArray"
-        @click="backCard()"
+        @click="dischi.back = !dischi.back"
         
         :key="index"
          class="card mb-5" style="width: 18rem;"   >
           <img :src="dischi.poster" class="card-img-top" :alt="dischi.title">
           <div class="card-body">
             <h5 class="card-title">{{dischi.title}}</h5>
-          <div :class="back === false ? 'd-none' : '' " class="back  w-100 h-100">
+          <div :class="dischi.back === false ? 'd-none' : '' " class="back">
             <p class="card-text">{{dischi.author}}</p>
             <p class="card-text">{{dischi.year}}</p>
-            <p class="card-text">{{dischi.genere}}</p>
+            <p class="card-text">{{dischi.genre}}</p>
           </div>  
             
             
