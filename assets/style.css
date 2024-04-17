@@ -1,3 +1,9 @@
 body{
   background-color: #1d2d3c;
 }
+
+.card {
+  background-color: #112030;
+  color: white;
+  margin-left: 20px;
+}
