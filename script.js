@@ -4,7 +4,8 @@ createApp({
   data(){
     return{
       url: 'success.php',
-      dischiArray: []
+      dischiArray: [],
+      back: false
     }
   },
 
@@ -15,6 +16,10 @@ createApp({
           this.dischiArray = res.data
           console.log(this.dischiArray);
         })
+    },
+
+    backCard(){
+      this.back = !this.back
     }
   },
 
