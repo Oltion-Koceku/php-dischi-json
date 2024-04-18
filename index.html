@@ -36,7 +36,7 @@
             <p class="card-text">{{dischi.year}}</p>
             <p class="card-text">{{dischi.genre}}</p>
           </div>  
-            
+          <button @click.stop="eliminateAlbum(index)" class="btn btn-danger  mt-5">Elimina</button>
             
           </div>
 
@@ -67,6 +67,7 @@
           </div>
         </div>
       <button @click="addNewAlbum()" class="btn btn-danger  mt-5">Invia</button>
+      
     </div>
 
   </div>

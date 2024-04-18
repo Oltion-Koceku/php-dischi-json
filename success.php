@@ -19,6 +19,15 @@ if (isset($_POST['newAlbumTitle'])) {
  $list[] = $new_item;
 //  aggiorno la lista del json 
  file_put_contents('dischi.json', json_encode($list));
+};
+
+
+if (isset($_POST['deleteAlbum'])) {
+  // elimino con splice l'album
+  $indiceAlbumDaEliminare = $_POST['deleteAlbum'];
+  array_splice($list, $indiceAlbumDaEliminare, 1);
+ file_put_contents('dischi.json', json_encode($list));
+
 }
 
 

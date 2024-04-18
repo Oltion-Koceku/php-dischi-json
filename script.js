@@ -45,6 +45,16 @@ createApp({
       })  
 
 
+    },
+
+    eliminateAlbum(index){
+      const data = new FormData();
+      data.append('deleteAlbum', index);
+
+      axios.post(this.url, data)
+      .then(result =>{
+        this.dischiArray = result.data
+      })
     }
 
   },
