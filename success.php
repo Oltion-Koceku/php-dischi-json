@@ -5,7 +5,7 @@ $list = json_decode($json, true);
 // qua si insaerisce la logica dei dati ricevuti
 
 // verifica dell'esistenza del post
-if (isset($_POST['newAlbumTitle'])) {
+if (isset($_POST['newAlbumTitle']) && !$_POST['newAlbumTitle'] == '' ) {
   // creo un nuovo item con le variavbili che ci sono nel json
   $new_item = [
     'title' => $_POST['newAlbumTitle'],
