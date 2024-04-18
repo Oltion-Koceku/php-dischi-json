@@ -55,6 +55,16 @@ createApp({
       .then(result =>{
         this.dischiArray = result.data
       })
+    },
+
+    colorStar(index){
+      const data = new FormData();
+      data.append('color', index);
+
+      axios.post(this.url, data)
+      .then(result =>{
+        this.dischiArray = result.data
+      })
     }
 
   },

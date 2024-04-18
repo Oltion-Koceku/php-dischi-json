@@ -1,7 +1,7 @@
 <?php
 $json = file_get_contents('dischi.json');
 // trasformo la stringa del json in php
-$list = json_decode($json);
+$list = json_decode($json, true);
 // qua si insaerisce la logica dei dati ricevuti
 
 // verifica dell'esistenza del post
@@ -13,7 +13,8 @@ if (isset($_POST['newAlbumTitle'])) {
     'year' => $_POST['newAlbumYear'],
     'poster' => $_POST['newAlbumPoster'],
     'genre' => $_POST['newAlbumGenre'],
-    'back' => false
+    'back' => false,
+    "star" => false
   ];
   // aggiungo new item nella lista
  $list[] = $new_item;
@@ -21,7 +22,7 @@ if (isset($_POST['newAlbumTitle'])) {
  file_put_contents('dischi.json', json_encode($list));
 };
 
-
+// eliminare un album
 if (isset($_POST['deleteAlbum'])) {
   // elimino con splice l'album
   $indiceAlbumDaEliminare = $_POST['deleteAlbum'];
@@ -30,7 +31,13 @@ if (isset($_POST['deleteAlbum'])) {
 
 }
 
+// colorare la stella per i preferiti
+if (isset($_POST['color'])) {
+  $colorStar = $_POST['color'];
+  $list[$colorStar]['star'] = !$list[$colorStar]['star'];
+ file_put_contents('dischi.json', json_encode($list));
 
+}  
 
 // trasformo il file php 
 header('Content-Type: application/json');
