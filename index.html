@@ -39,9 +39,34 @@
             
             
           </div>
+
         </div>
         
+        
       </div>
+      <div class="invio d-flex text-white ">
+          <div class="titolo me-2 ">
+            <h2>Titolo</h2>
+            <input v-model="newAlbum.title" type="text">
+          </div>
+          <div class="autore me-2">
+            <h2>autore</h2>
+            <input v-model="newAlbum.author" type="text">
+          </div>
+          <div class="anno me-2">
+            <h2>anno</h2>
+            <input v-model="newAlbum.year" type="text">
+          </div>
+          <div class="poster me-2">
+            <h2>poster</h2>
+            <input v-model="newAlbum.poster" type="text">
+          </div>
+          <div class="genere me-2">
+            <h2>genere</h2>
+            <input v-model="newAlbum.genre" type="text">
+          </div>
+        </div>
+      <button @click="addNewAlbum()" class="btn btn-danger  mt-5">Invia</button>
     </div>
 
   </div>
